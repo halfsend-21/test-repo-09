@@ -18,6 +18,11 @@ roles:
     - fix
     - retro
     - prioritize
+agents:
+    - name: review
+      trigger: "false"
+    - name: retro
+      trigger: event.entity.kind == "change_proposal" && event.transition.kind in ["closed", "merged"]
 allowed_remote_resources:
     - https://raw.githubusercontent.com/fullsend-ai/fullsend/
     - https://raw.githubusercontent.com/fullsend-ai/agents/
